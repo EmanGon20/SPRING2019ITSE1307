@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crmchp2ex3", "crmchp2ex3\crmchp2ex3.vcxproj", "{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Debug|x64.ActiveCfg = Debug|x64
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Debug|x64.Build.0 = Debug|x64
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Debug|x86.Build.0 = Debug|Win32
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Release|x64.ActiveCfg = Release|x64
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Release|x64.Build.0 = Release|x64
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Release|x86.ActiveCfg = Release|Win32
+		{A19BFDC2-51CF-497D-A2DF-E57DFF0940AD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {927882A8-B455-4C54-90E1-7A0E32C4A2F1}
+	EndGlobalSection
+EndGlobal
