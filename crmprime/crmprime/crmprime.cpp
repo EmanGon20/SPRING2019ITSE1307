@@ -5,43 +5,40 @@
 #include <iostream>
 using namespace std;
 
+bool isPrime(int intValue) {
+	int intPrimeDivisionCount = 0;
+
+	if (intValue == 0) {
+		return false;
+		//cout << "Not Prime";
+	}
+	else {
+		for (int intPrimeCheck = 2;
+			intPrimeCheck < intValue;
+			intPrimeCheck++) {
+
+			if (intValue % intPrimeCheck == 0) {
+				intPrimeDivisionCount++;
+			}
+		}
+	}
+
+	if (intPrimeDivisionCount >= 1) {
+		return false;
+		//cout << "Not a prime!" << endl;
+	}
+
+	return true;
+}
+
 int main()
 {
 	int intNumber = 0;
-	int intPrimeDivisionCount = 0;
-	bool boolIsPrime = true;
 
 	for (int intRange = 1; intRange <= 10000; intRange++) {
 		intNumber = intRange;
 
-		intPrimeDivisionCount = 0;
-		boolIsPrime = true;
-		//Start with the guess it is prime then set to false if not true
-		if (intNumber == 0) {
-			boolIsPrime = false;
-			//cout << "Not Prime";
-		}
-		else {
-			for (int intPrimeCheck = 2;
-				intPrimeCheck < intNumber;
-				intPrimeCheck++) {
-
-				if (intNumber % intPrimeCheck == 0) {
-					intPrimeDivisionCount++;
-				}
-
-				//cerr << "N: " << intNumber <<
-				//	", PC: " << intPrimeCheck <<
-				//	", PDC: " << intPrimeDivisionCount << endl;
-			}
-		}
-
-		if (intPrimeDivisionCount >= 1) {
-			boolIsPrime = false;
-			//cout << "Not a prime!" << endl;
-		}
-
-		if (boolIsPrime) {
+		if (isPrime(intNumber)) {
 			cout << ", " << intNumber;
 		}
 	}
