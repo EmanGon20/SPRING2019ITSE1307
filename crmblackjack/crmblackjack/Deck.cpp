@@ -55,6 +55,7 @@ Card Deck::getCard()
 void Deck::shuffle()
 {
 	intCurrentCardIndex = 0;
+	std::random_shuffle(this->vtrDeck.begin(), this->vtrDeck.end());
 }
 
 
@@ -72,8 +73,7 @@ int Deck::getShufflePercent()
 
 int Deck::getPercentOfDeckDealt()
 {
-	// TODO: Add your implementation code here.
-	return 0;
+	return (this->intCurrentCardIndex * 100) / this->vtrDeck.size(); 
 }
 
 

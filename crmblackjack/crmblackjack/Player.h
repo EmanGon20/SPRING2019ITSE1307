@@ -10,18 +10,20 @@ public:
 	~Player();
 private:
 	int intPlayerNumber;
+	std::string strName;
+	std::vector<Card> vtrPlayerHand;
 	void setPlayerNumber();
 public:
 	std::string inputPlayerName();
-	void setPlayerName();
+	void setPlayerName(std::string strpName);
 	int getHandPointValue();
 	void printHand();
-	int toString();
-	int getHandString();
+	std::string toString();
+	std::string getHandString();
 	std::string getPlayerName();
-	bool addCard();
+	bool addCard(Card objpCard);
 	int getNumberCards();
 	void init();
-	std::vector<Card> vtrPlayerHand;
+	
 };
 
