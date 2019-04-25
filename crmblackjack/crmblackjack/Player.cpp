@@ -44,8 +44,18 @@ void Player::setPlayerName(std::string strpName)
 int Player::getHandPointValue()
 {
 	int intPointValue = 0;
+	int intCardValue = 0;
+	bool hasAce = false;
 	for (int intIndex = 0; intIndex < vtrPlayerHand.size(); intIndex++) {
-		intPointValue += vtrPlayerHand.at(intIndex).getFaceValue();
+		intCardValue = vtrPlayerHand.at(intIndex).getFaceValue();
+		if (1 == intCardValue) {
+			hasAce = true;
+		}
+		intPointValue += intCardValue;
+	}
+	//See if you have an ace and it could be equal to 11.
+	if (hasAce && ((intPointValue + 10) <= 21)) {
+		intPointValue += 10; //Add the 10 point difference since you already have the 1 added.
 	}
 	return intPointValue;
 }
