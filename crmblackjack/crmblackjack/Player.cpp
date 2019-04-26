@@ -48,8 +48,12 @@ int Player::getHandPointValue()
 	bool hasAce = false;
 	for (int intIndex = 0; intIndex < vtrPlayerHand.size(); intIndex++) {
 		intCardValue = vtrPlayerHand.at(intIndex).getFaceValue();
+
 		if (1 == intCardValue) {
 			hasAce = true;
+		}
+		if (intCardValue > 10) {
+			intCardValue = 10;
 		}
 		intPointValue += intCardValue;
 	}
