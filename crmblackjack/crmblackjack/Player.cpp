@@ -6,11 +6,17 @@ Player::Player()
 {
 	intPlayerNumber = 0;
 	setPlayerNumber();
+	setMoney(1000);
+	setBet(1);
 }
 
 
 Player::~Player()
 {
+	clearHand();
+	intPlayerNumber = 0;
+	intMoney = 0;
+	intBet = 0;
 }
 
 
@@ -74,6 +80,8 @@ void Player::printHand()
 std::string Player::toString()
 {
 	std::string strPlayer = "\nPlayer: " + getPlayerName();
+	strPlayer += "\tMoney: " + std::to_string(getMoney());
+	strPlayer += "\tBet: " + std::to_string(getBet());
 	strPlayer += "\nHand Value: " + std::to_string(getHandPointValue());
 	strPlayer += "\nHand: " + getHandString();
 	return strPlayer;
@@ -108,11 +116,54 @@ bool Player::addCard(Card objpCard)
 
 int Player::getNumberCards()
 {
-	return this->vtrPlayerHand.size();
+	return (int)this->vtrPlayerHand.size();
 }
 
-
-void Player::init()
+void Player::clearHand()
 {
-
+	vtrPlayerHand.clear();
 }
+
+void Player::setMoney(int intpMoney)
+{
+	if (intpMoney > 1000000) {
+		intpMoney = 1000000;
+	}
+	else if (intpMoney < 0) {
+		intpMoney = 0;
+	}
+	intMoney = intpMoney;
+}
+
+int Player::getMoney()
+{
+	return intMoney;
+}
+
+void Player::setBet(int intpBet)
+{
+	if (intpBet > getMoney()) {
+		intpBet = getMoney(); //Max Bet
+	}
+	if (intpBet < 0 && getMoney() >= 1) {
+		intpBet = 1;
+	}
+	intBet = intpBet;
+}
+
+int Player::getBet()
+{
+	return intBet;
+}
+
+int Player::inputPlayerBet()
+{
+	int intCurrentBet = 0;
+	do {
+		std::cout << "Please enter " << this->getPlayerName() << " bet current balance is " << getMoney() << ": ";
+		std::cin >> intCurrentBet;
+	} while (intCurrentBet <= 0 || intCurrentBet > getMoney());
+	setBet(intCurrentBet);
+	return getBet();
+}
+

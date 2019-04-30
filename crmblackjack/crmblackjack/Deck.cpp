@@ -61,7 +61,7 @@ void Deck::shuffle()
 
 int Deck::size()
 {
-	return vtrDeck.size();
+	return (int)vtrDeck.size();
 }
 
 
@@ -73,7 +73,7 @@ int Deck::getShufflePercent()
 
 int Deck::getPercentOfDeckDealt()
 {
-	return (this->intCurrentCardIndex * 100) / this->vtrDeck.size(); 
+	return (this->intCurrentCardIndex * 100) / (int)this->vtrDeck.size(); 
 }
 
 

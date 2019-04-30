@@ -10,6 +10,8 @@ public:
 	~Player();
 private:
 	int intPlayerNumber;
+	int intMoney;
+	int intBet;
 	std::string strName;
 	std::vector<Card> vtrPlayerHand;
 	void setPlayerNumber();
@@ -23,7 +25,15 @@ public:
 	std::string getPlayerName();
 	bool addCard(Card objpCard);
 	int getNumberCards();
-	void init();
+	void clearHand();
+	
+	void setMoney(int intpMoney);
+	int getMoney();
+	void setBet(int intpBet);
+	int getBet();
+	int inputPlayerBet();
+	
+
 	
 };
 
