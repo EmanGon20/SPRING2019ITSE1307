@@ -6,6 +6,8 @@ Contact::Contact()
 {
 }
 
+// Quick Comment
+
 
 Contact::~Contact()
 {
