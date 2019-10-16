@@ -13,7 +13,7 @@ Contact::~Contact()
 {
 }
 
-
+//Another Comment
 void Contact::setFirstName(std::string strpFirstName)
 {
 	if (strpFirstName.length() <= 0) {
